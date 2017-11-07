@@ -5,12 +5,32 @@ filename = ARGV.first
 
 txt = open(filename)
 
-puts "Here's your file #{filename}:"
-print txt.read
+puts "Here's task_1 file #{filename}:"
+old_file =txt.read
 
-print "Type the filename again: "
-file_again = $stdin.gets.chomp
+splits= old_file.split(" ")
 
-txt_again = open(file_again)
+split_length = splits.length()
 
-print txt_again.read
+elements=[]
+splits.each do |old_data|
+ if old_data.length() >3
+
+
+  elements.push(old_data)
+ end
+end
+
+# now we can print them out too
+elements.each {|i| puts i }
+
+
+result = elements.join(" ")
+filename="task_new_1.txt"
+target = open(filename, 'w')
+target.write(result)
+
+
+puts "And finally, we close it."
+target.close
+
