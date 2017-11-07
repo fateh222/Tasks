@@ -16,7 +16,6 @@ elements=[]
 splits.each do |old_data|
  if old_data.length() >3
 
-
   elements.push(old_data)
  end
 end
